@@ -29,20 +29,17 @@ const titleClickHandler = function(event){
   
   /* get 'href' attribute from the clicked link */
   const hrefFromClickedLink = clickedElement.getAttribute("href");
-  console.log('clickedHref:', hrefFromClickedLink);
   
   /* find the correct article using the selector (value of 'href' attribute) */
   const articles = document.querySelectorAll('.posts article');
   let chosenArticle;
-  console.log('articles: ', articles)
 
   for (let article of articles) {
-    console.log('#' + article.getAttribute('id'));
     if ('#' + article.getAttribute('id') == hrefFromClickedLink) {
-      chosenArticle = article.getAttribute('id')
+      chosenArticle = article.getAttribute('id');
+      break;
     }
   }
-  console.log('Chosen article: ', chosenArticle);
   
   /* add class 'active' to the correct article */
   document.getElementById(chosenArticle).classList.add('active');
