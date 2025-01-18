@@ -42,12 +42,6 @@ const titleClickHandler = function (event) {
   document.getElementById(chosenArticle).classList.add('active');
 }
 
-const links = document.querySelectorAll('.titles a');
-
-for (let link of links) {
-  link.addEventListener('click', titleClickHandler);
-}
-
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
@@ -62,7 +56,7 @@ function generateTitleLinks() {
   const articles = document.querySelectorAll(optArticleSelector);
 
   let html = '';
-  
+
   for (let article of articles) {
     /* [DONE] get the article id */
     const articleId = article.getAttribute('id');
@@ -82,6 +76,12 @@ function generateTitleLinks() {
     "afterbegin",
     html,
   );
+
+  const links = document.querySelectorAll('.titles a');
+
+  for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
+  }
 }
 
 generateTitleLinks();
