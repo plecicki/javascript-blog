@@ -25,7 +25,7 @@ const titleClickHandler = function (event) {
   }
 
   /* get 'href' attribute from the clicked link */
-  const hrefFromClickedLink = clickedElement.getAttribute("href");
+  const hrefFromClickedLink = clickedElement.getAttribute('href');
 
   /* find the correct article using the selector (value of 'href' attribute) */
   const articles = document.querySelectorAll('.posts article');
@@ -40,7 +40,7 @@ const titleClickHandler = function (event) {
 
   /* add class 'active' to the correct article */
   document.getElementById(chosenArticle).classList.add('active');
-}
+};
 
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
@@ -73,8 +73,8 @@ function generateTitleLinks() {
   }
 
   titleList.insertAdjacentHTML(
-    "afterbegin",
-    html,
+    'afterbegin',
+    html
   );
 
   const links = document.querySelectorAll('.titles a');
